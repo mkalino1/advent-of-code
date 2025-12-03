@@ -9,10 +9,10 @@ function sumInvalidNumsInRange({ start, end }: Range): number {
 
 function checkIfInvalid(num: number): boolean {
   const numStr = String(num)
-  
-  for (let i = 1; i <= numStr.length; i++) {
+
+  for (let i = 1; i <= numStr.length / 2; i++) {
     const segment = numStr.slice(0, i)
-    if (numStr.length == segment.length || numStr.length % segment.length != 0) continue
+    if (numStr.length % segment.length != 0) continue
 
     const repeatedSegment = segment.repeat(numStr.length / segment.length)
     if (repeatedSegment == numStr) return true
