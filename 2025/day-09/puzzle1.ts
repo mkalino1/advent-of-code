@@ -1,4 +1,4 @@
-import tiles from "./dataLoad";
+import { tiles } from "./dataLoad";
 
 let largestArea = 0
 

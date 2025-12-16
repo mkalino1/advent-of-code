@@ -12,4 +12,4 @@ const tiles: Tile[] = fs.readFileSync("2025/day-09/input.txt", "utf8")
     return { x, y }
   })
 
-export default tiles
+export { tiles, Tile }
