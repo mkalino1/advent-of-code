@@ -4,7 +4,7 @@ type Machine = {
   initialState: string
   goalState: string
   switches: number[][]
-  joltages: string
+  joltages: number[]
 }
 
 const lightsRegex = /\[([^\]]+)\]/
@@ -17,7 +17,7 @@ const machines: Machine[] = fs.readFileSync("2025/day-10/input.txt", "utf8")
     const goalState = line.match(lightsRegex)![1]
     const initialState = '.'.repeat(goalState.length)
     const switches = [...line.matchAll(switchesRegex)].map(match => match[1].split(',').map(Number))
-    const joltages = line.match(joltagesRegex)![1]
+    const joltages = line.match(joltagesRegex)![1].split(",").map(Number)
     return { initialState, goalState, switches, joltages }
   })
 
